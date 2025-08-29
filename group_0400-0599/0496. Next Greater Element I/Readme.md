@@ -86,3 +86,8 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
             ans[i] = val
         } else {
             ans[i] = -1
+        }
+    }
+    return ans
+}
+```
