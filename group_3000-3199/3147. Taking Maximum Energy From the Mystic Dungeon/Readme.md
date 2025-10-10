@@ -17,7 +17,7 @@ Kamu bebas memilih titik awal manapun untuk memulai perjalananmu. Tujuanmu adala
 ### Intuisi 
 
 - Konsep utama dalam penyelesaian problem disini adalah prefix sum
-- Prefix sum dilakukan dengan formula `preSum[i] = energy[i] + preSum[i-k]`
+- Nilai prefix sum dihitung menggunakan rumus: preSum[i] = energy[i] + preSum[i - k]
 
 --- 
 
@@ -37,9 +37,9 @@ Kamu bebas memilih titik awal manapun untuk memulai perjalananmu. Tujuanmu adala
 
 ### Description 
 
-In a mystic dungeon, n magicians are standing in a line. Each magician has an attribute that gives you energy. Some magicians can give you negative energy, which means taking energy from you.
+In a mystic dungeon, n magicians are standing in a line. Each magician has an attribute that gives you energy. Some magicians may give you negative energy, effectively draining your energy instead.
 
-You have been cursed in such a way that after absorbing energy from magician i, you will be instantly transported to magician (i + k). This process will be repeated until you reach the magician where (i + k) does not exist.
+You are cursed so that after absorbing energy from magician i, you are instantly transported to magician (i + k). This process will be repeated until you reach the magician where (i + k) does not exist.
 
 In other words, you will choose a starting point and then teleport with k jumps until you reach the end of the magicians' sequence, absorbing all the energy during the journey.
 
@@ -51,14 +51,14 @@ Note that when you are reach a magician, you must take energy from them, whether
 
 ### Intuition 
 
-- The key concept to solve this problem was prefix sum
-- Because of the teleportation will do with `k` step, so the formula of prefSum is `preSum[i] = energy[i] + preSum[i]`
+- The key concept to solve this problem is the prefix sum approach.
+- Since teleportation happens every k steps, the formula is preSum[i] = energy[i] + preSum[i - k].
 
 --- 
 
 ### Approach 
 
-- Iterate array `energy` to get the prefix sum array with the formula `preSum[i] = energy[i] + preSum[i]`
+- Iterate through the energy array to compute the prefix sum using the formula preSum[i] = energy[i] + preSum[i - k].
 - Find the maximum value from the prefix sum array
 
 --- 
